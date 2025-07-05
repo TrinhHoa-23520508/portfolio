@@ -1,0 +1,165 @@
+import { useRef, useState } from "react";
+import { FaMoon} from "react-icons/fa";
+import { useTheme } from "@/context/ThemeContext";
+import { CN, US, VN } from "country-flag-icons/react/3x2";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { ThemeColor } from "@/utils/ColorsConstant";
+import { AiOutlineSun } from "react-icons/ai";
+import { useLanguage } from "@/context/LanguageContext";
+import type { Language } from "@/types/type";
+import { useClickOutside } from "@/hooks/useClickOutside";
+
+const Header = () => {
+  const { language, changeLanguage } = useLanguage();
+  const { t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  const desktopLangRef = useRef<HTMLDivElement>(null);
+  const mobileLangRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside(desktopLangRef, () => {
+    if (!isMenuOpen) setIsLangOpen(false); 
+  });
+
+  useClickOutside(mobileLangRef, () => {
+    if (isMenuOpen) setIsLangOpen(false);
+  });
+
+  const renderFlag = (lang: Language) => {
+    switch (lang) {
+      case "vi":
+        return <VN className="w-5 h-5 rounded-full" />;
+      case "en":
+        return <US className="w-5 h-5 rounded-full" />;
+      case "zh":
+        return <CN className="w-5 h-5 rounded-full" />;
+    }
+  };
+
+  return (
+    <header className={`w-full px-6 py-4 flex justify-between items-center ${ThemeColor.background} shadow-md relative z-50`}>
+      <div className="flex items-center gap-8">
+        <span className={`${ThemeColor.title} text-xl font-bold`}>Trịnh Hòa</span>
+
+        <nav className="hidden md:flex gap-6 text-sm font-medium">
+          <Link to="/" className={ThemeColor.navLink}>{t("home")}</Link>
+          <Link to="/projects" className={ThemeColor.navLink}>{t("project")}</Link>
+          <Link to="/about" className={ThemeColor.navLink}>{t("about")}</Link>
+        </nav>
+      </div>
+
+      <div className="hidden md:flex items-center gap-4">
+        <button onClick={toggleTheme} className="text-black dark:text-white text-lg">
+          {theme === "dark" ? <FaMoon /> : <AiOutlineSun />}
+        </button>
+
+        <div className="relative" ref={desktopLangRef}>
+          <button
+            type="button"
+            className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-gray-900 dark:text-white bg-white dark:bg-[#1f1f3a] hover:bg-gray-100 dark:hover:bg-gray-700 transition ring-1 ring-gray-300 ring-inset"
+            onClick={() => setIsLangOpen(!isLangOpen)}
+          >
+            {renderFlag(language)}
+          </button>
+
+          {isLangOpen && (
+            <div className="absolute right-0 mt-2 min-w-[180px] rounded-md bg-white dark:bg-[#2a2a2a] shadow-lg ring-1 ring-black/10 z-50">
+              <div className="py-1 space-y-1">
+                <button
+                  onClick={() => changeLanguage("en")}
+                  className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
+                >
+                  <US className="w-5 h-5 rounded-full" />
+                  English
+                </button>
+                <button
+                  onClick={() => changeLanguage("vi")}
+                  className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
+                >
+                  <VN className="w-5 h-5 rounded-full" />
+                  Tiếng Việt
+                </button>
+                <button
+                  onClick={() => changeLanguage("zh")}
+                  className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
+                >
+                  <CN className="w-5 h-5 rounded-full" />
+                  中文
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile menu icon */}
+      <button
+        className="md:hidden inline-flex justify-center items-center rounded-md px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow ring-1 ring-gray-300 ring-inset"
+        onClick={() => {
+          setIsMenuOpen(!isMenuOpen);
+          setIsLangOpen(false);
+        }}
+      >
+        ☰
+      </button>
+
+      {/* Mobile dropdown menu */}
+      {isMenuOpen && (
+        <div className={`absolute top-full left-0 w-full ${ThemeColor.background} py-4 px-6 md:hidden space-y-4 text-left text-sm z-40`}>
+          <nav className="flex flex-col gap-2">
+            <Link to="/" className={ThemeColor.navLink}>{t("home")}</Link>
+            <Link to="/projects" className={ThemeColor.navLink}>{t("project")}</Link>
+            <Link to="/about" className={ThemeColor.navLink}>{t("about")}</Link>
+          </nav>
+
+          <div className="pt-2 flex items-center justify-between">
+            <button onClick={toggleTheme} className="text-black dark:text-white text-lg">
+              {theme === "dark" ? <FaMoon /> : <AiOutlineSun />}
+            </button>
+
+            <div className="relative" ref={mobileLangRef}>
+              <button
+                type="button"
+                className="inline-flex justify-center items-center gap-1 rounded-md text-sm font-semibold text-gray-900 bg-white dark:text-white dark:bg-[#1f1f3a] px-3 py-2 ring-1 ring-gray-300 ring-inset"
+                onClick={() => setIsLangOpen(!isLangOpen)}
+              >
+                {renderFlag(language)}
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute right-0 mt-2 min-w-[160px] bg-white dark:bg-[#2a2a2a] rounded-md shadow-lg py-2 z-50 ring-1 ring-black/5">
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
+                  >
+                    <US className="w-5 h-5 rounded-full" />
+                    English
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("vi")}
+                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
+                  >
+                    <VN className="w-5 h-5 rounded-full" />
+                    Tiếng Việt
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("zh")}
+                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
+                  >
+                    <CN className="w-5 h-5 rounded-full" />
+                    中文
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;
