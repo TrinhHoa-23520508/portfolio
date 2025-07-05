@@ -138,7 +138,7 @@ const Header = () => {
 
       {/* Mobile dropdown menu*/}
       {isMenuOpen && (
-        <div className={`w-full ${ThemeColor.background} py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700`}>
+        <div className={`w-full py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700`}>
           <nav className="flex flex-col gap-2">
             <NavLink
               to="/"
