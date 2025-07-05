@@ -6,6 +6,6 @@ export const ThemeColor = {
   border: "border-gray-300 dark:border-violet-600",
   link: "text-blue-600 dark:text-blue-300 hover:underline",
   error: "text-red-600 dark:text-red-400",
- buttonNormal: "text-sm text-black dark:text-white bg-white hover:bg-gray-600 dark:bg-[#2a2a2a]"
+ buttonNormal: "cursor-pointer text-sm text-black dark:text-white bg-white hover:bg-gray-600 dark:bg-[#2a2a2a]"
 
 } as const;
