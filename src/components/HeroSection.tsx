@@ -6,11 +6,11 @@ import DeveloperTerminal from "./DeveloperTermianl";
 import type { DeveloperProfile } from "@/types/type";
 import { ThemeColor } from "@/utils/ColorsConstant";
 import { useTranslation } from "react-i18next";
-
+import { MdDownload } from "react-icons/md";
 
 const HeroSection = () => {
     const [wave, setWave] = useState(false);
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const developer: DeveloperProfile = {
         name: 'Trịnh Hòa',
         skills: ['React', 'Redux', 'ReactNative', 'Java Spring', 'NestJS', 'NoSQL', 'SQL', 'Docker'],
@@ -34,6 +34,16 @@ const HeroSection = () => {
         return () => clearInterval(interval);
     }, []);
 
+
+    const handleDownloadResumePdf = () => {
+        const link = document.createElement("a");
+        link.href = "/Resume.pdf";
+        link.download = "Resume.pdf";
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
     return (
         <section className={`flex flex-col md:flex-row justify-between items-center gap-8 px-6 md:px-20 py-16 ${ThemeColor.background} text-white`}>
             {/* Left Content */}
@@ -91,8 +101,10 @@ const HeroSection = () => {
                         text-black dark:text-white">
                         {t('mySkill')} 🔥
                     </button>
-                    <button className="px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 text-black transition">
-                        {t('getResume')} ⬇
+                    <button className="flex justify-center items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 text-black transition"
+                        onClick={handleDownloadResumePdf}>
+                        {t('getResume')}
+                        <MdDownload className="mx-2" />
                     </button>
                 </div>
             </div>
