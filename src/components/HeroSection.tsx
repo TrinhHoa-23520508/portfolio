@@ -45,7 +45,7 @@ const HeroSection = () => {
         document.body.removeChild(link);
     }
     return (
-        <section className={`flex flex-col md:flex-row justify-between items-center gap-8 px-6 md:px-20 py-16 ${ThemeColor.background} text-white`}>
+        <section className={`flex flex-col md:flex-row justify-between items-center gap-8 px-6 md:px-40 py-16 ${ThemeColor.background} text-white`}>
             {/* Left Content */}
             <div className="space-y-4 max-w-xl">
                 <div className="flex items-center text-2xl font-bold">

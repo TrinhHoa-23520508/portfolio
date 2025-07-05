@@ -41,7 +41,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`w-full ${ThemeColor.background} shadow-md relative z-50`}>
+    <header className={`w-full ${ThemeColor.background} shadow-md relative z-50 px-30`}>
       {/* Main header content */}
       <div className="px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-8">
