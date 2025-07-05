@@ -1,14 +1,15 @@
 import { useRef, useState } from "react";
-import { FaMoon} from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 import { CN, US, VN } from "country-flag-icons/react/3x2";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ThemeColor } from "@/utils/ColorsConstant";
 import { AiOutlineSun } from "react-icons/ai";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Language } from "@/types/type";
 import { useClickOutside } from "@/hooks/useClickOutside";
+
 
 const Header = () => {
   const { language, changeLanguage } = useLanguage();
@@ -21,7 +22,7 @@ const Header = () => {
   const mobileLangRef = useRef<HTMLDivElement>(null);
 
   useClickOutside(desktopLangRef, () => {
-    if (!isMenuOpen) setIsLangOpen(false); 
+    if (!isMenuOpen) setIsLangOpen(false);
   });
 
   useClickOutside(mobileLangRef, () => {
@@ -47,10 +48,34 @@ const Header = () => {
           <span className={`${ThemeColor.title} text-xl font-bold`}>{t('name')}</span>
 
           <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <Link to="/" className={ThemeColor.navLink}>{t("home")}</Link>
-            <Link to="/projects" className={ThemeColor.navLink}>{t("project")}</Link>
-            <Link to="/about" className={ThemeColor.navLink}>{t("about")}</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("home")}
+            </NavLink>
+
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("project")}
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("about")}
+            </NavLink>
           </nav>
+
         </div>
 
         <div className="hidden md:flex items-center gap-4">
@@ -115,9 +140,32 @@ const Header = () => {
       {isMenuOpen && (
         <div className={`w-full ${ThemeColor.background} py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700`}>
           <nav className="flex flex-col gap-2">
-            <Link to="/" className={ThemeColor.navLink}>{t("home")}</Link>
-            <Link to="/projects" className={ThemeColor.navLink}>{t("project")}</Link>
-            <Link to="/about" className={ThemeColor.navLink}>{t("about")}</Link>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("home")}
+            </NavLink>
+
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("project")}
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                ThemeColor.navLink(isActive)
+              }
+            >
+              {t("about")}
+            </NavLink>
           </nav>
 
           <div className="pt-2 flex items-center justify-between">

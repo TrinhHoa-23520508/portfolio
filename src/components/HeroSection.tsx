@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaHandPaper } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
