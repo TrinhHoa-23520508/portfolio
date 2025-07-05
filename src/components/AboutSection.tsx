@@ -1,9 +1,10 @@
 import { ThemeColor } from "@/utils/ColorsConstant";
 import { useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 const AboutSection = () => {
     const [transform, setTransform] = useState({ rotateX: 0, rotateY: 0, translateX: 0, translateY: 0 });
-
+    const { t } = useTranslation();
     const handleMouseMove = (e: React.MouseEvent) => {
         const rect = e.currentTarget.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -25,15 +26,29 @@ const AboutSection = () => {
     };
 
     return (
-        <section className={`flex flex-col md:flex-row items-center justify-between py-10 px-6 md:px-40 ${ThemeColor.background} gap-10`}>
+        <section className={`flex flex-col md:flex-row items-center justify-between py-10 px-6 md:px-40 gap-10`}>
             <div className="text-white max-w-xl text-center md:text-left">
-                <h2 className="text-3xl font-bold text-pink-500">
-                    GIỚI THIỆU <span className="text-white">BẢN THÂN</span>
-                </h2>
-                <p className="mt-4">Yêu đơn phương lập trình và tôi tin rằng mình đã học hỏi được ít nhiều điều gì đó. 🧑‍💻</p>
-                <p className="mt-2">Tôi nắm vững các ngôn ngữ như <em className="text-pink-400 font-semibold">Java</em> và <em className="text-pink-400 font-semibold">Javascript</em>.</p>
-                <p className="mt-2">Quan tâm đến <span className="text-pink-400 font-semibold">công nghệ web mới và các sản phẩm liên quan</span>.</p>
-                <p className="mt-2">Tôi phát triển sản phẩm bằng <strong className="text-pink-400">Java Spring</strong> và <strong className="text-pink-400">Node.js</strong>.</p>
+                <p className="text-black dark:text-white">
+                    <Trans i18nKey="aboutSection.title">
+                    LET ME <span className="text-pink-500">INTRODUCE</span> MYSELF
+                </Trans>
+                </p>
+                <p className="mt-4 text-black dark:text-white">{t('aboutSection.paragraphs.p1')}</p>
+                <p className="mt-2 text-black dark:text-white">
+                    <Trans i18nKey="aboutSection.paragraphs.p2">
+                        I am fluent in classics like <em className="text-pink-500 font-semibold">Java and Javascript</em>.
+                    </Trans>
+                </p>
+                <p className="mt-2 text-black dark:text-white">
+                    <Trans i18nKey="aboutSection.paragraphs.p3">
+                        My field of interest's are building new <em className="text-pink-500 font-semibold">Web Technologies and Products</em>
+                    </Trans>
+                </p>
+                <p className="mt-2 text-black dark:text-white">
+                    <Trans i18nKey="aboutSection.paragraphs.p4">
+                        Whenever possible, I also apply my passion for developing products with <strong className="text-pink-500">Java Spring</strong> and <strong className="text-pink-500">Node.js</strong>
+                    </Trans>
+                </p>
             </div>
 
             <div className="flex flex-col items-center relative md:pr-20">
@@ -49,7 +64,7 @@ const AboutSection = () => {
                 </div>
 
                 <div className="absolute -right-14 top-1/2 transform -translate-y-1/2 rotate-90 bg-[#1e293b] text-white px-2 py-1 rounded-md shadow-md text-xl text-center tracking-wider md:w-40">
-                    GIỚI THIỆU
+                    {t('aboutSection.label').toUpperCase()}
                 </div>
             </div>
         </section>

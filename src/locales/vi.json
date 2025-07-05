@@ -5,5 +5,17 @@
   "about": "Về tác giả",
   "name": "Trịnh Hòa",
   "mySkill": "Kinh nghiệm",
-  "getResume": "Tải resume"
+  "getResume": "Tải resume",
+  "aboutSection": {
+    "title": "HÃY ĐỂ TÔI <1>GIỚI THIỆU</1> BẢN THÂN",
+    "paragraphs": {
+      "p1": "Tôi đã yêu lập trình và tôi nghĩ mình cũng đã học được một vài điều... 🤷‍♂️",
+      "p2": "Tôi thành thạo các ngôn ngữ như <1>Java và Javascript</1>.",
+      "p3": "Lĩnh vực tôi quan tâm là xây dựng <1>Các công nghệ và sản phẩm web mới</1>",
+      "p4": "Bất cứ khi nào có thể, tôi đều cố gắng áp dụng đam mê của mình vào phát triển sản phẩm với <1>Java Spring</1> và <3>Node.js</3>"
+    },
+    "label": "GIỚI THIỆU"
+  }
+
+
 }

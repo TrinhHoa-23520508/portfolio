@@ -5,7 +5,7 @@ const Footer = () => {
   const [heartHover, setHeartHover] = useState(false);
 
   return (
-    <footer className={`${ThemeColor.background} py-8`}>
+    <footer className={`py-8`}>
       <div className="max-w-6xl mx-auto px-6 ">
        
 
