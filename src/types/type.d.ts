@@ -14,3 +14,9 @@ export interface IExperience {
   title: string;
   description: string;
 }
+
+interface IItemCarousel {
+  name: string;
+  icon: React.ReactNode;
+  description: string;
+}

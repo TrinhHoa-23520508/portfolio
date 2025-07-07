@@ -6,7 +6,7 @@ import DeveloperTerminal from "./DeveloperTermianl";
 import type { DeveloperProfile } from "@/types/type";
 import { useTranslation } from "react-i18next";
 import { MdDownload } from "react-icons/md";
-import { Mail} from "lucide-react";
+import { Mail } from "lucide-react";
 
 const HeroSection = () => {
     const [wave, setWave] = useState(false);
@@ -102,7 +102,11 @@ const HeroSection = () => {
                 {/* Buttons */}
                 <div className="flex gap-4 mt-6">
                     <button className="px-6 py-3 border rounded-full border-blue-500 dark:border-pink-400 hover:bg-blue-500 dark:hover:bg-pink-300 transition
-                        text-black dark:text-white">
+                        text-black dark:text-white"
+                        onClick={() => {
+                            const el = document.getElementById("skills");
+                            if (el) el.scrollIntoView({ behavior: "smooth" });
+                        }}>
                         {t('mySkill')} 🔥
                     </button>
                     <button className="flex justify-center items-center px-6 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90 text-black transition"

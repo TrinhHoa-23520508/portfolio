@@ -32,7 +32,11 @@
       "title": "自学与实践经验",
       "description": "自主学习、构建个人项目，并在THD公司实习"
     }
-  ]
+  ],
+  "skills": "技能",
+  "techStack": "技术栈"
+
+
 
 
 }
