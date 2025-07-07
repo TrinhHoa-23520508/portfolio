@@ -2,6 +2,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import ExperienceCard from './ExperianceCard';
 import { useTranslation } from 'react-i18next';
 import type { IExperience } from '@/types/type';
+import { User } from 'lucide-react';
 
 const ExperiencesSection = () => {
     const { t } = useTranslation();
@@ -24,7 +25,10 @@ const ExperiencesSection = () => {
                 </div>
 
                 <div >
-                    {experiences.map((ex, index)=> <ExperienceCard key={index} experience={ex}/>)}
+                    {experiences.map((ex, index)=> <ExperienceCard key={index} experience={ex}
+                                                    icon={<User
+              className={`text-purple-600 transition-all duration-300 `}
+            />}/>)}
                 </div>
             </div>
         </section>

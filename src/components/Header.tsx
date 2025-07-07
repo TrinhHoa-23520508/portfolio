@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 import { CN, US, VN } from "country-flag-icons/react/3x2";
@@ -10,16 +10,25 @@ import { useLanguage } from "@/context/LanguageContext";
 import type { Language } from "@/types/type";
 import { useClickOutside } from "@/hooks/useClickOutside";
 
-
 const Header = () => {
   const { language, changeLanguage } = useLanguage();
   const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const desktopLangRef = useRef<HTMLDivElement>(null);
   const mobileLangRef = useRef<HTMLDivElement>(null);
+
+  // Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useClickOutside(desktopLangRef, () => {
     if (!isMenuOpen) setIsLangOpen(false);
@@ -41,45 +50,34 @@ const Header = () => {
   };
 
   return (
-    <header className={`w-full shadow-md relative z-50 px-30`}>
-      {/* Main header content */}
+    <header
+      className={`w-full fixed top-0 left-0 z-50 px-30 transition-all duration-300 backdrop-blur-sm ${
+        scrolled
+          ? "bg-white/80 dark:bg-[#0f172a]/80 shadow-md border-b border-gray-200 dark:border-gray-700"
+          : "bg-transparent"
+      }`}
+    >
       <div className="px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-8">
-          <span className={`${ThemeColor.title} text-xl font-bold`}>{t('name')}</span>
+          <span className={`${ThemeColor.title} text-xl font-bold`}>
+            {t("name")}
+          </span>
 
           <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("home")}
             </NavLink>
-
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/projects" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("project")}
             </NavLink>
-
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/about" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("about")}
             </NavLink>
           </nav>
-
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <button onClick={toggleTheme} className="text-black dark:text-white text-lg cursor-pointer" >
+          <button onClick={toggleTheme} className="text-black dark:text-white text-lg cursor-pointer">
             {theme === "dark" ? <FaMoon /> : <AiOutlineSun />}
           </button>
 
@@ -99,7 +97,7 @@ const Header = () => {
                 <div className="py-1 space-y-1">
                   <button
                     onClick={() => changeLanguage("en")}
-                    className={`${ThemeColor.buttonNormal}  flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
+                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
                   >
                     <US className="w-5 h-5 rounded-full" />
                     English
@@ -136,34 +134,17 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile dropdown menu*/}
+      {/* Mobile dropdown menu */}
       {isMenuOpen && (
-        <div className={`w-full py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700`}>
+        <div className="w-full py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700">
           <nav className="flex flex-col gap-2">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("home")}
             </NavLink>
-
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/projects" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("project")}
             </NavLink>
-
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                ThemeColor.navLink(isActive)
-              }
-            >
+            <NavLink to="/about" className={({ isActive }) => ThemeColor.navLink(isActive)}>
               {t("about")}
             </NavLink>
           </nav>

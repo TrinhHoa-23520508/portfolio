@@ -9,9 +9,10 @@ interface Position {
 
 interface IProps {
     experience: IExperience;
+    icon: React.ReactNode;
 }
 const ExperienceCard: React.FC<IProps> = (prop: IProps) => {
-    const {experience} = prop;
+    const {experience, icon} = prop;
   const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [isIconHovered, setIsIconHovered] = useState(false);
@@ -34,7 +35,7 @@ const ExperienceCard: React.FC<IProps> = (prop: IProps) => {
   };
 
   return (
-    <div className="flex items-center justify-center p-8" >
+    <div className="flex items-center justify-center p-3" >
       <div
         ref={cardRef}
         onMouseEnter={() => setIsHovered(true)}
@@ -56,11 +57,7 @@ const ExperienceCard: React.FC<IProps> = (prop: IProps) => {
               isIconHovered ? 'scale-110' : 'scale-100'
             }`}
           >
-            <User
-              className={`text-purple-600 transition-all duration-300 ${
-                isIconHovered ? 'w-7 h-7' : 'w-6 h-6'
-              }`}
-            />
+            {icon}
           </div>
 
           <div className="flex-1">
