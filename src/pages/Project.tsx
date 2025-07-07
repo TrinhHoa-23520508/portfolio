@@ -1,6 +1,10 @@
 import ProjectCard from "@/components/ProjectCard";
-import { fakeProjects } from "@/data/projects";
+import type { IProject } from "@/types/type";
+import { useTranslation } from "react-i18next";
+
 const ProjectPage = () => {
+    const {t} = useTranslation();
+    const projects = t('projects', {returnObjects:true}) as IProject[]
     return (
         <div className="flex flex-col py-10 px-20">
             <div className="text-center font-bold text-2xl text-black dark:text-white">
@@ -10,7 +14,7 @@ const ProjectPage = () => {
                 <p>Here are a few projects I've worked on recently.</p>
             </div>
             <div className="flex flex-col md:grid md:grid-cols-3 p-3">
-                {fakeProjects.map((project, index)=> 
+                {projects.map((project, index)=> 
                 {
                     return(
                         <div className="m-5" key={index}>

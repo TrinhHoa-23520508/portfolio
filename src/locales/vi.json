@@ -36,7 +36,37 @@
   ],
   "skills": "Kỹ năng",
   "techStack": "Công nghệ sử dụng",
-  "messengerLabel": "Mình có thể giúp gì được cho bạn 😊"
+  "messengerLabel": "Mình có thể giúp gì được cho bạn 😊",
+  "projects": [
+    {
+      "title": "Trang web thương mại điện tử Laptop",
+      "description": "Nền tảng web bán laptop sử dụng Spring Framework. Tuân thủ kiến trúc MVC giúp mở rộng dễ dàng. Tích hợp các module Spring, giao diện bằng JSP và cơ sở dữ liệu MySQL.",
+      "image": "https://cdn-icons-png.flaticon.com/512/263/263115.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/Spring-MVC",
+      "demoLink": "#"
+    },
+    {
+      "title": "Trang quản lý cửa hàng quần áo",
+      "description": "Ứng dụng web full-stack giúp quản lý cửa hàng quần áo. Admin có thể quản lý kho, báo cáo, người dùng; khách hàng có thể mua sắm. Backend dùng NestJS, frontend React/Next.js và cơ sở dữ liệu PostgreSQL.",
+      "image": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/cloth-store",
+      "demoLink": "https://github.com/TrinhHoa-23520508/cloth-store-fe"
+    },
+    {
+      "title": "TinTinShop – Ứng dụng đặt đồ uống",
+      "description": "Ứng dụng di động đặt đồ uống, phát triển bằng React Native (Expo) và Java Spring Boot. Bao gồm tính năng người dùng và admin như đặt hàng, xem menu, quản lý sản phẩm, xác thực, tải file và tích hợp dữ liệu.",
+      "image": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/TinTinShop",
+      "demoLink": "/video/TinTin_demo.mp4"
+    },
+    {
+      "title": "Sweet Backend – API lõi quản lý tiết kiệm",
+      "description": "Hệ thống backend bảo mật cho ứng dụng tiết kiệm, phát triển bằng Spring Boot. Tích hợp xác thực JWT, phân quyền, xác minh email và cấu trúc dự án rõ ràng dễ mở rộng.",
+      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/sweet_backend",
+      "demoLink": "#"
+    }
+  ]
 
 
 

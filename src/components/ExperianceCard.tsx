@@ -18,6 +18,8 @@ const ExperienceCard: React.FC<IProps> = (prop: IProps) => {
   const [isIconHovered, setIsIconHovered] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
+
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();

@@ -35,7 +35,37 @@
   ],
   "skills": "技能",
   "techStack": "技术栈",
-  "messengerLabel": "我可以帮你什么吗？😊"
+  "messengerLabel": "我可以帮你什么吗？😊",
+  "projects": [
+    {
+      "title": "笔记本电脑电商平台",
+      "description": "一个基于Spring框架的笔记本电脑电商平台。采用MVC架构，具有良好的可扩展性和可维护性。前端使用JSP，数据库使用MySQL。",
+      "image": "https://cdn-icons-png.flaticon.com/512/263/263115.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/Spring-MVC",
+      "demoLink": "#"
+    },
+    {
+      "title": "服装店管理系统",
+      "description": "一个全栈Web应用程序，用于高效管理服装商店。管理员可管理库存、报表和用户；顾客可浏览和购买。使用NestJS后端、React/Next.js前端和PostgreSQL数据库。",
+      "image": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/cloth-store",
+      "demoLink": "https://github.com/TrinhHoa-23520508/cloth-store-fe"
+    },
+    {
+      "title": "TinTinShop – 移动饮品点单应用",
+      "description": "一个使用React Native（Expo）和Java Spring Boot开发的饮品点单应用。包括用户下单、菜单浏览、产品管理、身份验证、文件上传和数据集成等功能。",
+      "image": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/TinTinShop",
+      "demoLink": "/video/TinTin_demo.mp4"
+    },
+    {
+      "title": "Sweet Backend – 储蓄管理核心API系统",
+      "description": "一个为储蓄应用提供的后端核心API系统。使用Spring Boot构建，包含JWT身份验证、权限管理、邮件验证和模块化架构，易于扩展和复用。",
+      "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "githubLink": "https://github.com/TrinhHoa-23520508/sweet_backend",
+      "demoLink": "#"
+    }
+  ]
 
 
 

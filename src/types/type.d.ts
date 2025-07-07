@@ -15,8 +15,16 @@ export interface IExperience {
   description: string;
 }
 
-interface IItemCarousel {
+export interface IItemCarousel {
   name: string;
   icon: React.ReactNode;
   description: string;
+}
+
+export interface IProject {
+  title: string;
+    description: string;
+    image: string;
+    githubLink: string;
+    demoLink: string;
 }
