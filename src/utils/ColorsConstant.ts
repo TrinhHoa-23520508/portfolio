@@ -2,8 +2,8 @@ export const ThemeColor = {
   title: "text-stone-950 dark:text-emerald-400 text-xl font-semibold",
   navLink: (isActive: boolean) => 
     isActive 
-      ? "text-stone-900 dark:text-emerald-300 font-bold transition"
-      : "text-stone-700 hover:text-stone-800 transition dark:text-gray-400 dark:hover:text-white",
+      ? "text-stone-900 dark:text-emerald-500 font-bold transition p-2 rounded-xl bg-slate-300 dark:bg-emerald-100"
+      : "text-stone-700 hover:text-stone-800 transition dark:text-gray-400 dark:hover:text-white p-2 rounded-xl",
   subtitle: "text-gray-700 dark:text-gray-300",
   background: "bg-white  dark:bg-gradient-to-r dark:from-[#0d1224] dark:via-[#191932] dark:to-[#1f1f3a]",
   border: "border-gray-300 dark:border-violet-600",

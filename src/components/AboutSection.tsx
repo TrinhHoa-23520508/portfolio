@@ -1,4 +1,3 @@
-import { ThemeColor } from "@/utils/ColorsConstant";
 import { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 

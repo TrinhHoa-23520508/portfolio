@@ -1,9 +1,13 @@
+import EducationSection from "@/components/EducationSection";
+import ProfileSection from "@/components/ProfileSection";
+import SocialSection from "@/components/SocialSection";
+
 const AboutPage = () => {
     return (
         <div>
-            <p>
-                About page
-            </p>
+            <ProfileSection/>
+            <EducationSection/>
+            <SocialSection/>
         </div>
     )
 }

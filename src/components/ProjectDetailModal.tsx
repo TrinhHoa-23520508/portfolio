@@ -4,7 +4,6 @@ import { FaGithub } from "react-icons/fa6";
 import { VscPreview } from "react-icons/vsc";
 
 interface Props extends IProject {
-
   onClose: () => void;
 }
 

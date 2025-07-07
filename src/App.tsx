@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next"
 const App = () => {
   const {t} = useTranslation();
   return (
-    <div className={`${ThemeColor.background} pt-[72px]`}>
+    <div className={`${ThemeColor.background} pt-[72px] w-full h-full`}>
       <Header/>
       <Outlet/>
       <MessengerButton facebookPageId="phong.86250" label={t('messengerLabel')}/>
