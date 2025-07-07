@@ -8,3 +8,9 @@ export interface DeveloperProfile {
   problemSolver: boolean;
   hireable: () => boolean;
 }
+
+export interface IExperience {
+  timeline: string;
+  title: string;
+  description: string;
+}

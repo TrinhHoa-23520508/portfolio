@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import DeveloperTerminal from "./DeveloperTermianl";
 import type { DeveloperProfile } from "@/types/type";
-import { ThemeColor } from "@/utils/ColorsConstant";
 import { useTranslation } from "react-i18next";
 import { MdDownload } from "react-icons/md";
+import { Mail} from "lucide-react";
 
 const HeroSection = () => {
     const [wave, setWave] = useState(false);
@@ -93,6 +93,10 @@ const HeroSection = () => {
                     <a href="https://www.linkedin.com/in/h%C3%B2a-tr%E1%BB%8Bnh-521049301/" className="cursor-pointer hover:text-sky-300 dark:hover:text-pink-300 ">
                         <FaLinkedin />
                     </a>
+                    <a href="mailto:trinhhoa.gl2005@gmail.com">
+                        <Mail className="cursor-pointer hover:text-sky-300 dark:hover:text-pink-300" />
+                    </a>
+
                 </div>
 
                 {/* Buttons */}

@@ -15,7 +15,26 @@
       "p4": "Bất cứ khi nào có thể, tôi đều cố gắng áp dụng đam mê của mình vào phát triển sản phẩm với <1>Java Spring</1> và <3>Node.js</3>"
     },
     "label": "GIỚI THIỆU"
-  }
+  },
+  "experiencesSection":"Kinh nghiệm làm việc",
+  "experiences": [
+    {
+      "timeline": "01/2020 - 01/2023",
+      "title": "Học sinh Trung học phổ thông",
+      "description": "Chuyên ngành Hóa học tại Trường THPT chuyên Hùng Vương, tỉnh Gia Lai"
+    },
+    {
+      "timeline": "2023 - 2024",
+      "title": "Sinh viên năm nhất",
+      "description": "Theo học ngành Kỹ thuật Phần mềm tại Đại học Công nghệ Thông tin (UIT)"
+    },
+    {
+      "timeline": "2024 - 2025",
+      "title": "Tự học và trải nghiệm thực tế",
+      "description": "Chủ động học tập, xây dựng dự án cá nhân và tham gia thực tập tại công ty THD"
+    }
+  ]
+
 
 
 }

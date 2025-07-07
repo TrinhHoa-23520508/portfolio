@@ -14,6 +14,24 @@
       "p4": "Whenever possible, I also apply my passion for developing products with <1>Java Spring</1> and <3>Node.js</3>"
     },
     "label": "ABOUT ME"
-  }
+  },
+  "experiencesSection":"Experiences",
+  "experiences": [
+    {
+      "timeline": "01/2020 - 01/2023",
+      "title": "High School Student",
+      "description": "Majored in Chemistry at Hung Vuong High School for the Gifted, Gia Lai Province"
+    },
+    {
+      "timeline": "2023 - 2024",
+      "title": "First-year University Student",
+      "description": "Studied Software Engineering at University of Information Technology (UIT)"
+    },
+    {
+      "timeline": "2024 - 2025",
+      "title": "Self-learning and Real-world Experience",
+      "description": "Independently explored knowledge, built personal projects, and interned at THD company"
+    }
+  ]
 }
 

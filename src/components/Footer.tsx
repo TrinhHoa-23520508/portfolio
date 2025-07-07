@@ -1,4 +1,4 @@
-import { ThemeColor } from "@/utils/ColorsConstant";
+
 import { useState } from "react";
 
 const Footer = () => {
@@ -6,16 +6,14 @@ const Footer = () => {
 
   return (
     <footer className={`py-8`}>
-      <div className="max-w-6xl mx-auto px-6 ">
-       
-
+      <div className="mx-30 ">
         {/* Divider */}
         <div className="border-t border-slate-800 my-6"></div>
 
         {/* Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-center text-slate-400 text-sm">
+        <div className="flex flex-col md:flex-row items-center justify-center text-black dark:text-white text-sm">
           <p className="mb-2 md:mb-0">
-            Copyright © 2025 <span className="text-pink-500 font-semibold">Trịnh Hòa</span> vs <span className="text-white font-semibold">Elior</span>. All rights reserved.
+            Copyright © 2025 <span className="dark:text-pink-500 font-semibold">Trịnh Hòa</span> vs <span className="dark:text-pink-500 font-semibold">Elior</span>. All rights reserved.
           </p>
           <p className="flex items-center px-1">
             Made with{" "}
@@ -28,7 +26,7 @@ const Footer = () => {
             >
               ♥
             </span>{" "}
-            in <span className="text-yellow-400 font-semibold px-1"> VietNam</span>
+            in <span className="dark:text-pink-500 font-semibold px-1"> VietNam</span>
           </p>
         </div>
 

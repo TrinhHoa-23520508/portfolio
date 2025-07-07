@@ -14,7 +14,25 @@
       "p4": "只要有机会，我都会将我的热情投入到使用 <1>Java Spring</1> 和 <3>Node.js</3> 开发产品中"
     },
     "label": "关于我"
-  }
+  },
+  "experiencesSection":"简体中文",
+  "experiences": [
+    {
+      "timeline": "2020年1月 - 2023年1月",
+      "title": "高中生",
+      "description": "在嘉莱省鸿王省重点中学主修化学"
+    },
+    {
+      "timeline": "2023年 - 2024年",
+      "title": "大学一年级学生",
+      "description": "在信息技术大学（UIT）学习软件工程"
+    },
+    {
+      "timeline": "2024年 - 2025年",
+      "title": "自学与实践经验",
+      "description": "自主学习、构建个人项目，并在THD公司实习"
+    }
+  ]
 
 
 }
