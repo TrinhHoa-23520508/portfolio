@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface IMessengerButtonProps {
-  facebookPageId: string; 
-  bgColor?: string; 
-  label?: string; 
-  position?: string; 
+  facebookPageId: string;
+  bgColor?: string;
+  label?: string;
+  position?: string;
 }
 
 const MessengerButton = ({
@@ -24,9 +24,8 @@ const MessengerButton = ({
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className={`${
-          hovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
-        } transition-all duration-300 bg-white text-gray-800 px-3 py-2 rounded-lg shadow-lg text-sm max-w-[220px] pointer-events-none`}
+        className={`${hovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
+          } transition-all duration-300 bg-white text-gray-800 px-3 py-2 rounded-lg shadow-lg text-sm max-w-[220px] pointer-events-none`}
       >
         <p>What's up bro?</p>
         {label}

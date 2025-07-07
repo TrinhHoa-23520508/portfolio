@@ -16,25 +16,24 @@ const DeveloperTerminal: React.FC<IProps> = ({ developer }) => {
     return () => clearInterval(interval);
   }, []);
 
-const CodeLine: React.FC<{ children: React.ReactNode; indent?: number }> = ({ children, indent = 0 }) => (
-  <div
-    className={`font-mono text-sm leading-relaxed rounded-sm py-1 px-1 
+  const CodeLine: React.FC<{ children: React.ReactNode; indent?: number }> = ({ children, indent = 0 }) => (
+    <div
+      className={`font-mono text-sm leading-relaxed rounded-sm py-1 px-1 
                 transition-transform duration-300 ease-out 
-                hover:bg-white/5 hover:translate-x-[2px] ${
-                  indent === 1
-                    ? 'ml-5'
-                    : indent === 2
-                    ? 'ml-10'
-                    : indent === 3
-                    ? 'ml-15'
-                    : indent === 4
-                    ? 'ml-20'
-                    : ''
-                }`}
-  >
-    {children}
-  </div>
-);
+                hover:bg-white/5 hover:translate-x-[2px] ${indent === 1
+          ? 'ml-5'
+          : indent === 2
+            ? 'ml-10'
+            : indent === 3
+              ? 'ml-15'
+              : indent === 4
+                ? 'ml-20'
+                : ''
+        }`}
+    >
+      {children}
+    </div>
+  );
 
 
 

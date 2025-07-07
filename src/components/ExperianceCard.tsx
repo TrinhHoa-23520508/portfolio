@@ -52,8 +52,8 @@ const ExperienceCard: React.FC<IProps> = ({ experience, icon }) => {
           background: isHovered
             ? `linear-gradient(white, white) padding-box, ${getBorderGlow()} border-box`
             : undefined,
-          boxShadow: isHovered 
-            ? '0 25px 50px -12px rgba(236, 72, 153, 0.25), 0 0 0 1px rgba(236, 72, 153, 0.1)' 
+          boxShadow: isHovered
+            ? '0 25px 50px -12px rgba(236, 72, 153, 0.25), 0 0 0 1px rgba(236, 72, 153, 0.1)'
             : '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
           transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
         }}
@@ -82,17 +82,16 @@ const ExperienceCard: React.FC<IProps> = ({ experience, icon }) => {
           <div
             onMouseEnter={() => setIsIconHovered(true)}
             onMouseLeave={() => setIsIconHovered(false)}
-            className={`flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-white to-pink-50 transition-all duration-500 shadow-lg ${
-              isIconHovered 
-                ? 'scale-110 shadow-pink-300/60 shadow-2xl' 
+            className={`flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-white to-pink-50 transition-all duration-500 shadow-lg ${isIconHovered
+                ? 'scale-110 shadow-pink-300/60 shadow-2xl'
                 : 'scale-100'
-            }`}
+              }`}
             style={{
-              background: isIconHovered 
-                ? 'linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(219, 39, 119, 0.05))' 
+              background: isIconHovered
+                ? 'linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(219, 39, 119, 0.05))'
                 : 'linear-gradient(135deg, #ffffff, #fdf2f8)',
-              boxShadow: isIconHovered 
-                ? '0 20px 25px -5px rgba(236, 72, 153, 0.3), 0 10px 10px -5px rgba(236, 72, 153, 0.2)' 
+              boxShadow: isIconHovered
+                ? '0 20px 25px -5px rgba(236, 72, 153, 0.3), 0 10px 10px -5px rgba(236, 72, 153, 0.2)'
                 : '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
             }}
           >
