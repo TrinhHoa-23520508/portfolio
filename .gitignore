@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 
-*.mp4
+# .gitignore
+/public/video/TinTin_demo.mp4
