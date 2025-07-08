@@ -6,7 +6,7 @@ const ProjectPage = () => {
     const {t} = useTranslation();
     const projects = t('projects', {returnObjects:true}) as IProject[]
     return (
-        <div className="flex flex-col py-10 px-20">
+        <div className="flex flex-col">
             <div className="text-center font-bold text-2xl text-black dark:text-white">
                 <h3>My Recent <span className="dark:text-pink-400">Works</span></h3>
             </div>

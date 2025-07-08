@@ -15,7 +15,7 @@ const ExperiencesSection = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
         >
-            <section className="flex flex-col border-t border-slate-800 px-40 mx-30">
+            <section className="flex flex-col border-t border-slate-800 md:px-30">
 
                 <p className='text-center my-10 text-2xl font-bold text-black dark:text-white'>{t('experiencesSection')}</p>
                 <div className="flex flex-col md:flex-row items-center justify-between">

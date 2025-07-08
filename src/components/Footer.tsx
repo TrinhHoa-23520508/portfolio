@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className={`py-8`}>
-      <div className="mx-30 ">
+      <div className="md:mx-30 ">
         {/* Divider */}
         <div className="border-t border-slate-800 my-6"></div>
 

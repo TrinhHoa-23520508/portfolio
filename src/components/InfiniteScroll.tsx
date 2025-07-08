@@ -43,7 +43,7 @@ const InfiniteScroll: React.FC<IProps> = (prop: IProps) => {
   }, [isPaused]);
 
   return (
-    <div className="w-full py-16 px-4">
+    <div className="w-80 md:w-full">
       <div className="max-w-6xl mx-auto">
         <div
           className="relative overflow-hidden"

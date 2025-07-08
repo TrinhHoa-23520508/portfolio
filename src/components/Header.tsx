@@ -51,143 +51,215 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 px-30 transition-all duration-300 backdrop-blur-sm ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 backdrop-blur-sm ${
         scrolled
-          ? "bg-white/80 dark:bg-[#0f172a]/80 shadow-md border-b border-gray-200 dark:border-gray-700"
+          ? "bg-white/90 dark:bg-[#0f172a]/90 shadow-lg border-b border-gray-200/50 dark:border-gray-700/50"
           : "bg-transparent"
       }`}
     >
-      <div className="px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-8">
-          <span className={`${ThemeColor.title} text-xl font-bold`}>
-            {t("name")}
-          </span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <span className={`${ThemeColor.title} text-xl sm:text-2xl font-bold`}>
+              {t("name")}
+            </span>
+          </div>
 
-          <nav className="hidden md:flex gap-6 text-sm font-medium">
-            <NavLink to="/" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("home")}
-            </NavLink>
-            <NavLink to="/projects" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("project")}
-            </NavLink>
-            <NavLink to="/about" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("about")}
-            </NavLink>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <div className="flex space-x-6">
+              <NavLink to="/" className={({ isActive }) => ThemeColor.navLink(isActive)}>
+                {t("home")}
+              </NavLink>
+              <NavLink to="/projects" className={({ isActive }) => ThemeColor.navLink(isActive)}>
+                {t("project")}
+              </NavLink>
+              <NavLink to="/about" className={({ isActive }) => ThemeColor.navLink(isActive)}>
+                {t("about")}
+              </NavLink>
+            </div>
+
+            {/* Desktop Controls */}
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={toggleTheme} 
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+              >
+                {theme === "dark" ? 
+                  <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : 
+                  <AiOutlineSun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                }
+              </button>
+
+              <div className="relative" ref={desktopLangRef}>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center w-10 h-10 rounded-full  hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 shadow-sm ring-1 ring-gray-200 dark:ring-gray-700"
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                >
+                  {renderFlag(language)}
+                </button>
+
+                {isLangOpen && (
+                  <div className="absolute right-0 mt-2 w-48 rounded-xl shadow-lg  ">
+                    <div className="py-2">
+                      <button
+                        onClick={() => {
+                          changeLanguage("en");
+                          setIsLangOpen(false);
+                        }}
+                        className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                      >
+                        <US className="w-5 h-5 rounded-full flex-shrink-0" />
+                        <span className="text-sm font-medium">English</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          changeLanguage("vi");
+                          setIsLangOpen(false);
+                        }}
+                        className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                      >
+                        <VN className="w-5 h-5 rounded-full flex-shrink-0" />
+                        <span className="text-sm font-medium">Tiếng Việt</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          changeLanguage("zh");
+                          setIsLangOpen(false);
+                        }}
+                        className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                      >
+                        <CN className="w-5 h-5 rounded-full flex-shrink-0" />
+                        <span className="text-sm font-medium">中文</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
           </nav>
-        </div>
 
-        <div className="hidden md:flex items-center gap-4">
-          <button onClick={toggleTheme} className="text-black dark:text-white text-lg cursor-pointer">
-            {theme === "dark" ? <FaMoon /> : <AiOutlineSun />}
-          </button>
-
-          <div className="relative" ref={desktopLangRef}>
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium
-               text-gray-900 dark:text-white bg-white dark:bg-[#1f1f3a] hover:bg-gray-100
-                dark:hover:bg-gray-700 transition ring-1 ring-gray-300 ring-inset cursor-pointer"
-              onClick={() => setIsLangOpen(!isLangOpen)}
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center space-x-3">
+            <button 
+              onClick={toggleTheme} 
+              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
             >
-              {renderFlag(language)}
+              {theme === "dark" ? 
+                <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : 
+                <AiOutlineSun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+              }
             </button>
 
-            {isLangOpen && (
-              <div className="absolute right-0 mt-2 min-w-[180px] rounded-md bg-white dark:bg-[#2a2a2a] shadow-lg ring-1 ring-black/10 z-50">
-                <div className="py-1 space-y-1">
-                  <button
-                    onClick={() => changeLanguage("en")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
-                  >
-                    <US className="w-5 h-5 rounded-full" />
-                    English
-                  </button>
-                  <button
-                    onClick={() => changeLanguage("vi")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
-                  >
-                    <VN className="w-5 h-5 rounded-full" />
-                    Tiếng Việt
-                  </button>
-                  <button
-                    onClick={() => changeLanguage("zh")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-700 transition`}
-                  >
-                    <CN className="w-5 h-5 rounded-full" />
-                    中文
-                  </button>
-                </div>
-              </div>
-            )}
+            <button
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 shadow-sm ring-1 ring-gray-200 dark:ring-gray-700"
+              onClick={() => {
+                setIsMenuOpen(!isMenuOpen);
+                setIsLangOpen(false);
+              }}
+            >
+              <svg
+                className={`w-5 h-5 text-gray-600 dark:text-gray-300 transition-transform duration-200 ${
+                  isMenuOpen ? 'rotate-90' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
-
-        {/* Mobile menu icon */}
-        <button
-          className="md:hidden inline-flex justify-center items-center rounded-md px-3 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow ring-1 ring-gray-300 ring-inset"
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen);
-            setIsLangOpen(false);
-          }}
-        >
-          ☰
-        </button>
       </div>
 
       {/* Mobile dropdown menu */}
       {isMenuOpen && (
-        <div className="w-full py-4 px-6 md:hidden space-y-4 text-left text-sm border-t border-gray-200 dark:border-gray-700">
-          <nav className="flex flex-col gap-2">
-            <NavLink to="/" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("home")}
-            </NavLink>
-            <NavLink to="/projects" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("project")}
-            </NavLink>
-            <NavLink to="/about" className={({ isActive }) => ThemeColor.navLink(isActive)}>
-              {t("about")}
-            </NavLink>
-          </nav>
-
-          <div className="pt-2 flex items-center justify-between">
-            <button onClick={toggleTheme} className="text-black dark:text-white text-lg">
-              {theme === "dark" ? <FaMoon /> : <AiOutlineSun />}
-            </button>
-
-            <div className="relative" ref={mobileLangRef}>
-              <button
-                type="button"
-                className="inline-flex justify-center items-center gap-1 rounded-md text-sm font-semibold text-gray-900 bg-white dark:text-white dark:bg-[#1f1f3a] px-3 py-2 ring-1 ring-gray-300 ring-inset"
-                onClick={() => setIsLangOpen(!isLangOpen)}
+        <div className="md:hidden border-t border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <nav className="space-y-2">
+              <NavLink 
+                to="/" 
+                className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
+                onClick={() => setIsMenuOpen(false)}
               >
-                {renderFlag(language)}
-              </button>
+                {t("home")}
+              </NavLink>
+              <NavLink 
+                to="/projects" 
+                className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("project")}
+              </NavLink>
+              <NavLink 
+                to="/about" 
+                className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t("about")}
+              </NavLink>
+            </nav>
 
-              {isLangOpen && (
-                <div className="absolute right-0 mt-2 min-w-[160px] bg-white dark:bg-[#2a2a2a] rounded-md shadow-lg py-2 z-50 ring-1 ring-black/5">
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {t("language") || "Language"}
+                </span>
+                
+                <div className="relative" ref={mobileLangRef}>
                   <button
-                    onClick={() => changeLanguage("en")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
+                    type="button"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 ring-1 ring-gray-200 dark:ring-gray-600"
+                    onClick={() => setIsLangOpen(!isLangOpen)}
                   >
-                    <US className="w-5 h-5 rounded-full" />
-                    English
+                    {renderFlag(language)}
                   </button>
-                  <button
-                    onClick={() => changeLanguage("vi")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
-                  >
-                    <VN className="w-5 h-5 rounded-full" />
-                    Tiếng Việt
-                  </button>
-                  <button
-                    onClick={() => changeLanguage("zh")}
-                    className={`${ThemeColor.buttonNormal} flex items-center gap-2 px-4 py-2 w-full hover:bg-gray-700`}
-                  >
-                    <CN className="w-5 h-5 rounded-full" />
-                    中文
-                  </button>
+
+                  {isLangOpen && (
+                    <div className="absolute right-0 mt-2 w-44 rounded-xl shadow-lg z-50">
+                      <div className="py-2">
+                        <button
+                          onClick={() => {
+                            changeLanguage("en");
+                            setIsLangOpen(false);
+                          }}
+                          className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                        >
+                          <US className="w-5 h-5 rounded-full flex-shrink-0" />
+                          <span className="text-sm font-medium">English</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            changeLanguage("vi");
+                            setIsLangOpen(false);
+                          }}
+                          className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                        >
+                          <VN className="w-5 h-5 rounded-full flex-shrink-0" />
+                          <span className="text-sm font-medium">Tiếng Việt</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            changeLanguage("zh");
+                            setIsLangOpen(false);
+                          }}
+                          className={`${ThemeColor.buttonNormal} flex items-center gap-3 px-4 py-3 w-full text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200`}
+                        >
+                          <CN className="w-5 h-5 rounded-full flex-shrink-0" />
+                          <span className="text-sm font-medium">中文</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
