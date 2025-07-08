@@ -56,7 +56,7 @@
       "description": "A mobile app for ordering drinks, built with React Native (Expo) and Java Spring Boot. Includes customer and admin features like order placing, menu browsing, product management, authentication, file uploads, and database/cloud integration.",
       "image": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/TinTinShop",
-      "demoLink": "/video/TinTin_demo.mp4"
+      "demoLink": "https://drive.google.com/file/d/1K1eMd4nHkLoR0lxexv_r63-AGsl_C6iS/view?usp=sharing"
     },
     {
       "title": "Sweet Backend – Core API System for Savings Management",
@@ -64,6 +64,23 @@
       "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/sweet_backend",
       "demoLink": "#"
+    }
+  ],
+   "education": [
+    {
+      "timeline": "2020–2023",
+      "title": "High School Student",
+      "description": "Chemistry major, Hung Vuong High School for the Gifted, Gia Lai Province"
+    },
+    {
+      "timeline": "2023–2024",
+      "title": "1st-Year Student",
+      "description": "Software Engineering, University of Information Technology (UIT), VNU-HCM"
+    },
+    {
+      "timeline": "2024–2025",
+      "title": "2nd-Year Student & Intern",
+      "description": "UIT student, Fullstack Intern"
     }
   ]
 

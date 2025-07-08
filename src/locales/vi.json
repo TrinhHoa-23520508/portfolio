@@ -57,7 +57,7 @@
       "description": "Ứng dụng di động đặt đồ uống, phát triển bằng React Native (Expo) và Java Spring Boot. Bao gồm tính năng người dùng và admin như đặt hàng, xem menu, quản lý sản phẩm, xác thực, tải file và tích hợp dữ liệu.",
       "image": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/TinTinShop",
-      "demoLink": "/video/TinTin_demo.mp4"
+      "demoLink": "https://drive.google.com/file/d/1K1eMd4nHkLoR0lxexv_r63-AGsl_C6iS/view?usp=sharing"
     },
     {
       "title": "Sweet Backend – API lõi quản lý tiết kiệm",
@@ -65,6 +65,23 @@
       "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/sweet_backend",
       "demoLink": "#"
+    }
+  ],
+   "education": [
+    {
+      "timeline": "2020–2023",
+      "title": "Học sinh Trung học Phổ thông",
+      "description": "Chuyên Hóa, Trường THPT Chuyên Hùng Vương, tỉnh Gia Lai"
+    },
+    {
+      "timeline": "2023–2024",
+      "title": "Sinh viên năm nhất",
+      "description": "Ngành Kỹ thuật Phần mềm, Trường Đại học Công nghệ Thông tin (UIT), ĐHQG TP.HCM"
+    },
+    {
+      "timeline": "2024–2025",
+      "title": "Sinh viên năm hai & Thực tập sinh",
+      "description": "Sinh viên UIT, thực tập sinh Fullstack"
     }
   ]
 

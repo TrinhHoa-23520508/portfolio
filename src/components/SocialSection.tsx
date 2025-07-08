@@ -10,14 +10,14 @@ const SocialSection = () => {
         {
             name: 'GitHub',
             icon: <FaGithub className="w-6 h-6" />,
-            url: 'https://github.com',
+            url: 'https://github.com/TrinhHoa-23520508',
             color: 'hover:bg-gray-800',
             hoverColor: 'rgba(55, 65, 81, 0.2)'
         },
         {
             name: 'LinkedIn',
             icon: <FaLinkedin className="w-6 h-6" />,
-            url: 'https://linkedin.com',
+            url: 'https://www.linkedin.com/in/h%C3%B2a-tr%E1%BB%8Bnh-521049301/',
             color: 'hover:bg-blue-600',
             hoverColor: 'rgba(37, 99, 235, 0.2)'
         },
@@ -31,21 +31,21 @@ const SocialSection = () => {
         {
             name: 'Instagram',
             icon: <FaInstagram className="w-6 h-6" />,
-            url: 'https://instagram.com',
+            url: 'https://www.instagram.com/trinhhoa8614/',
             color: 'hover:bg-pink-600',
             hoverColor: 'rgba(219, 39, 119, 0.2)'
         },
         {
             name: 'Facebook',
             icon: <FaFacebook className="w-6 h-6" />,
-            url: 'https://facebook.com',
+            url: 'https://www.facebook.com/trinh.hoa.900085',
             color: 'hover:bg-blue-700',
             hoverColor: 'rgba(29, 78, 216, 0.2)'
         },
         {
             name: 'Email',
             icon: <Mail className="w-6 h-6" />,
-            url: 'mailto:your.email@example.com',
+            url: 'mailto:trinhhoa.gl2005@gmail.com',
             color: 'hover:bg-red-600',
             hoverColor: 'rgba(220, 38, 38, 0.2)'
         }
@@ -131,7 +131,8 @@ const SocialSection = () => {
                         <p className="text-gray-600 dark:text-gray-300 mb-6">
                             I'm always open to discussing new opportunities and interesting projects.
                         </p>
-                        <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+                        <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            onClick={()=> window.location.href = 'mailto:trinhhoa.gl2005@gmail.com'}>
                             <Mail className="w-5 h-5 mr-2" />
                             Get In Touch
                         </button>

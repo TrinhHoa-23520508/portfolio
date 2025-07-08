@@ -11,7 +11,7 @@ const ProfileSection = () => {
             <section className="flex flex-col md:flex-row items-center justify-between gap-10 my-10 px-6 md:px-40 ">
                 <article className="md:w-1/2 text-left space-y-4">
                     <h2 className="text-3xl font-bold text-primary dark:text-white mb-4">
-                        Know Who I Am
+                        Know Who I'M
                     </h2>
 
                     <p className="text-base leading-relaxed dark:text-white">
@@ -35,12 +35,13 @@ const ProfileSection = () => {
                         <li>✍️ Writing tech blogs</li>
                         <li>✈️ Travelling</li>
                         <li>🎧 Listening to music</li>
+                        <li>💻 Watching anime</li>
                     </ul>
 
                     <blockquote className="italic text-gray-600 dark:text-gray-400 border-l-4 border-pink-400 pl-4 mt-4">
-                        "Pursuing your dreams is how you become homeless ~.~"
+                        "Live as if you were to die tomorrow. Learn as if you were to live forever."
                         <br />
-                        <span className="text-sm font-medium">— Jimmy O. Yang</span>
+                        <span className="text-sm font-medium">— Mahatma Gandhi</span>
                     </blockquote>
                 </article>
 

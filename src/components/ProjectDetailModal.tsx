@@ -58,15 +58,17 @@ const ProjectDetailModal: React.FC<Props> = ({
           </div>
         </div>
 
-        {demoLink !== "#" && demoLink.endsWith(".mp4") && (
+        {demoLink !== "#" && demoLink.includes("drive.google.com") && (
           <div className="px-6 pb-6">
-            <video
-              src={demoLink}
-              controls
-              className="w-full rounded-lg shadow-md border dark:border-gray-700"
+            <iframe
+              src={demoLink.replace("/view", "/preview")}
+              allow="autoplay"
+              allowFullScreen
+              className="w-full h-[400px] rounded-lg shadow-md border dark:border-gray-700"
             />
           </div>
         )}
+
       </div>
     </div>
   );

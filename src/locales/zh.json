@@ -56,7 +56,7 @@
       "description": "一个使用React Native（Expo）和Java Spring Boot开发的饮品点单应用。包括用户下单、菜单浏览、产品管理、身份验证、文件上传和数据集成等功能。",
       "image": "https://cdn-icons-png.flaticon.com/512/1046/1046784.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/TinTinShop",
-      "demoLink": "/video/TinTin_demo.mp4"
+      "demoLink": "https://drive.google.com/file/d/1K1eMd4nHkLoR0lxexv_r63-AGsl_C6iS/view?usp=sharing/video/TinTin_demo.mp4"
     },
     {
       "title": "Sweet Backend – 储蓄管理核心API系统",
@@ -64,6 +64,23 @@
       "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
       "githubLink": "https://github.com/TrinhHoa-23520508/sweet_backend",
       "demoLink": "#"
+    }
+  ],
+  "education": [
+    {
+      "timeline": "2020–2023",
+      "title": "高中生",
+      "description": "化学专业，嘉莱省洪王省立重点高中"
+    },
+    {
+      "timeline": "2023–2024",
+      "title": "大一学生",
+      "description": "软件工程专业，信息技术大学（UIT），胡志明国家大学"
+    },
+    {
+      "timeline": "2024–2025",
+      "title": "大二学生 & 实习生",
+      "description": "UIT学生，全栈开发实习生"
     }
   ]
 

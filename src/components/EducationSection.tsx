@@ -3,27 +3,10 @@ import ExperienceCard from "./ExperianceCard";
 import { FaGraduationCap } from "react-icons/fa6";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 const EducationSection = () => {
-    const educations: IExperience[] = [
-        {
-            timeline: "2020-2023",
-            title: "Học sinh trung học phổ thông",
-            description: "Trường THPT chuyên Hùng Vương, Pleiku, Gia Lai"
-
-        },
-        {
-            timeline: "2023-2024",
-            title: "Sinh viên năm 1",
-            description: "Trường Đại học Công nghệ thông tin (UIT)"
-
-        },
-        {
-            timeline: "2024-2025",
-            title: "Sinh viên năm 2",
-            description: "Trường Đại học Công nghệ thông tin (UIT)"
-
-        }
-    ]
+    const {t} = useTranslation()
+    const educations: IExperience[] = t('education', {returnObjects: true}) as IExperience[]
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
