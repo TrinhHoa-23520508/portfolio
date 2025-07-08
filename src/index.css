@@ -58,3 +58,9 @@
     transform: none;
   }
 }
+
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+}

@@ -63,11 +63,11 @@ const SkillSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
-        > <section id="skills" className='flex flex-col items-center border-t border-slate-800 mx-30 py-5'>
+        > <section id="skills" className='flex flex-col items-center border-t border-slate-800 md:mx-30 mx-5 py-5'>
                 <div className="w-full text-center mb-10 font-bold text-black dark:text-white text-2xl">
                     <p>{t('skills')}</p>
                 </div>
-                <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col md:flex-row justify-between items-center'>
                     <img
                         src={`https://github-readme-stats.vercel.app/api?username=trinhhoa-23520508&show_icons=true&theme=${theme === "dark" ? "radical" : "default"}&hide_border=true&count_private=true&locale=${language === 'zh' ? "cn" : language}`}
                         alt="GitHub Stats"
