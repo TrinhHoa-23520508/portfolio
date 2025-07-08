@@ -80,10 +80,10 @@ const SkillSection = () => {
                     />
 
                 </div>
-                <div className="w-full text-center mt-20 font-bold text-black dark:text-white text-2xl">
+                <div className="w-full text-center mt-20 font-bold text-black dark:text-white text-2xl max-md:hidden">
                     <p>{t('techStack')}</p>
                 </div>
-                <div>
+                <div className="max-md:hidden">
                     <InfiniteScroll items={skills} />
                 </div>
 
