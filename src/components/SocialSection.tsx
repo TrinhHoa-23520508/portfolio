@@ -58,21 +58,21 @@ const SocialSection = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.3 }}
         >
-            <div className="py-16 px-4">
-                <div className="max-w-4xl mx-auto text-center">
+            <div className="relative py-16 px-4 overflow-hidden">
+                <div className="relative max-w-4xl mx-auto text-center">
                     {/* Header */}
                     <div className="mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                             Let's Connect
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                             Feel free to reach out and connect with me on social media or drop me a message.
                             I'd love to hear from you!
                         </p>
                     </div>
 
                     {/* Social Links Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-12">
                         {socialLinks.map((social, index) => (
                             <a
                                 key={social.name}
@@ -81,7 +81,7 @@ const SocialSection = () => {
                                 rel="noopener noreferrer"
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
-                                className="group relative flex flex-col items-center p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2"
+                                className="group relative flex flex-col items-center p-4 sm:p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2"
                                 style={{
                                     boxShadow: hoveredIndex === index
                                         ? `0 25px 50px -12px ${social.hoverColor}, 0 0 0 1px ${social.hoverColor}`
@@ -99,7 +99,7 @@ const SocialSection = () => {
                                 )}
 
                                 {/* Icon container */}
-                                <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-xl bg-gray-50 dark:bg-gray-700 mb-4 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600">
+                                <div className="relative z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gray-50 dark:bg-gray-700 mb-4 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600">
                                     <div className="text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
                                         {social.icon}
                                     </div>
@@ -124,26 +124,29 @@ const SocialSection = () => {
                     </div>
 
                     {/* Contact CTA */}
-                    <div className="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-3xl p-8 border border-pink-100 dark:border-pink-800/30">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <div className="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-3xl p-6 sm:p-8 border border-pink-100 dark:border-pink-800/30">
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
                             Have a project in mind?
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300 mb-6">
+                        <p className="text-gray-600 dark:text-gray-300 mb-6 text-sm md:text-base">
                             I'm always open to discussing new opportunities and interesting projects.
                         </p>
-                        <button className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
-                            onClick={()=> window.location.href = 'mailto:trinhhoa.gl2005@gmail.com'}>
+                        <button
+                            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                            onClick={() => window.location.href = 'mailto:trinhhoa.gl2005@gmail.com'}
+                        >
                             <Mail className="w-5 h-5 mr-2" />
                             Get In Touch
                         </button>
                     </div>
 
-                    {/* Floating elements for visual interest */}
-                    <div className="absolute -top-4 -left-4 w-72 h-72 bg-pink-100 dark:bg-pink-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-                    <div className="absolute -bottom-8 -right-4 w-72 h-72 bg-purple-100 dark:bg-purple-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+                    {/* Floating elements (hide on mobile) */}
+                    <div className="hidden sm:block absolute -top-4 -left-4 w-72 h-72 bg-pink-100 dark:bg-pink-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+                    <div className="hidden sm:block absolute -bottom-8 -right-4 w-72 h-72 bg-purple-100 dark:bg-purple-900/30 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
                 </div>
             </div>
         </motion.div>
+
 
     );
 };

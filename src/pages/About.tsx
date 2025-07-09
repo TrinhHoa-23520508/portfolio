@@ -4,7 +4,7 @@ import SocialSection from "@/components/SocialSection";
 
 const AboutPage = () => {
     return (
-        <div>
+        <div className="w-full">
             <ProfileSection/>
             <EducationSection/>
             <SocialSection/>
