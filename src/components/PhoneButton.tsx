@@ -10,8 +10,8 @@ interface IPhoneButtonProps {
 const PhoneButton = ({
   phoneNumber,
   bgColor = "dark:bg-green-500 dark:hover:bg-green-600 bg-green-600",
-  label = "Liên hệ ngay 📞",
-  position = "bottom-36 right-5", 
+  label = "Contact now 📞",
+  position = "bottom-40 right-5", 
 }: IPhoneButtonProps) => {
   const [hovered, setHovered] = useState(false);
   const phoneLink = `tel:${phoneNumber}`;

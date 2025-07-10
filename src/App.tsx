@@ -15,7 +15,7 @@ const App = () => {
       <Header/>
       <Outlet/>
       <MessengerButton facebookPageId="trinh.hoa.900085" label={t('messengerLabel')}/>
-      <PhoneButton phoneNumber="0935900023"/>
+      <PhoneButton phoneNumber="0935900023" label={`${t('phoneLabel')} 📞`}/>
       <ScrollToTopButton/>
       <Footer/>
     </div>
