@@ -5,6 +5,7 @@ import { ThemeColor } from "./utils/ColorsConstant"
 import ScrollToTopButton from "./components/ScrollToTopButton"
 import MessengerButton from "./components/MessengerButton"
 import { useTranslation } from "react-i18next"
+import PhoneButton from "./components/PhoneButton"
 
 
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
     <div className={`${ThemeColor.background} pt-[72px] w-full h-full`}>
       <Header/>
       <Outlet/>
-      <MessengerButton facebookPageId="phong.86250" label={t('messengerLabel')}/>
+      <MessengerButton facebookPageId="trinh.hoa.900085" label={t('messengerLabel')}/>
+      <PhoneButton phoneNumber="0935900023"/>
       <ScrollToTopButton/>
       <Footer/>
     </div>
