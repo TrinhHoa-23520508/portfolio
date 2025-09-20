@@ -9,12 +9,14 @@ import AboutPage from "./pages/About"
 import ProjectPage from "./pages/Project"
 import { ThemeProvider } from "./context/ThemeContext"
 import { LanguageProvider } from "./context/LanguageContext"
+import ScrollToTop from "./utils/ScrollToTop"
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode >
     <ThemeProvider>
       <LanguageProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<App />}>
               <Route index element={<HomePage />} />
@@ -23,7 +25,7 @@ createRoot(document.getElementById("root")!).render(
             </Route>
           </Routes>
         </BrowserRouter>
-      </LanguageProvider> 
+      </LanguageProvider>
     </ThemeProvider>
   </StrictMode>
 )

@@ -51,19 +51,20 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 backdrop-blur-sm ${
-        scrolled
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 backdrop-blur-sm ${scrolled
           ? "bg-white/90 dark:bg-[#0f172a]/90 shadow-lg border-b border-gray-200/50 dark:border-gray-700/50"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className={`${ThemeColor.title} text-xl sm:text-2xl font-bold`}>
-              {t("name")}
-            </span>
+            <NavLink to="/">
+              <span className={`${ThemeColor.title} text-xl sm:text-2xl font-bold`}>
+                {t("name")}
+              </span>
+            </NavLink>
           </div>
 
           {/* Desktop Navigation */}
@@ -82,12 +83,12 @@ const Header = () => {
 
             {/* Desktop Controls */}
             <div className="flex items-center space-x-4">
-              <button 
-                onClick={toggleTheme} 
+              <button
+                onClick={toggleTheme}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
               >
-                {theme === "dark" ? 
-                  <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : 
+                {theme === "dark" ?
+                  <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> :
                   <AiOutlineSun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
                 }
               </button>
@@ -143,12 +144,12 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-3">
-            <button 
-              onClick={toggleTheme} 
+            <button
+              onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
             >
-              {theme === "dark" ? 
-                <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> : 
+              {theme === "dark" ?
+                <FaMoon className="w-5 h-5 text-gray-600 dark:text-gray-300" /> :
                 <AiOutlineSun className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               }
             </button>
@@ -161,9 +162,8 @@ const Header = () => {
               }}
             >
               <svg
-                className={`w-5 h-5 text-gray-600 dark:text-gray-300 transition-transform duration-200 ${
-                  isMenuOpen ? 'rotate-90' : ''
-                }`}
+                className={`w-5 h-5 text-gray-600 dark:text-gray-300 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -184,22 +184,22 @@ const Header = () => {
         <div className="md:hidden border-t border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
             <nav className="space-y-2">
-              <NavLink 
-                to="/" 
+              <NavLink
+                to="/"
                 className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("home")}
               </NavLink>
-              <NavLink 
-                to="/projects" 
+              <NavLink
+                to="/projects"
                 className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t("project")}
               </NavLink>
-              <NavLink 
-                to="/about" 
+              <NavLink
+                to="/about"
                 className={({ isActive }) => `${ThemeColor.navLink(isActive)} block px-4 py-3 rounded-lg text-base font-medium transition-colors duration-200`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -212,7 +212,7 @@ const Header = () => {
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   {t("language") || "Language"}
                 </span>
-                
+
                 <div className="relative" ref={mobileLangRef}>
                   <button
                     type="button"
